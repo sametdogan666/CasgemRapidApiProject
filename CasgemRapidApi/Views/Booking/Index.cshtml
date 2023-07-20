@@ -1,0 +1,58 @@
+﻿@model List<HotelListViewModel.Result>
+
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+
+<div class="container">
+    <br /><br />
+    <h2>Otel Ara</h2>
+    <br/>
+    <form method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="adult" class="form-control" placeholder="Yetişkin Sayısı"/>
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" name="child" class="form-control" placeholder="Çocuk Sayısı"/>
+            </div>
+            <div class="col-md-6  mb-2">
+                <input type="text" name="checkInDate" class="form-control" placeholder="Giriş Tarihi"/>
+            </div>
+            <div class="col-md-6  mb-2">
+                <input type="text" name="checkOutDate" class="form-control" placeholder="Çıkış Tarihi"/>
+            </div>
+            <div class="col-md-6  mb-2">
+                <input type="text" name="roomNumber" class="form-control" placeholder="Oda Sayısı"/>
+            </div>
+            <div class="col-md-6  mb-2">
+                <input type="text" name="cityId" class="form-control" placeholder="Şehir Id"/>
+            </div>
+            <button class="btn btn-dark">Otel Ara</button>
+        </div>
+    </form>
+</div>
+<br/>
+
+<h2>Otel Listesi</h2>
+<div class="container">
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>İsim</th>
+            <th>Skor</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id.</td>
+                <td>@item.name</td>
+                <td>@item.reviewScore</td>
+            </tr>
+        }
+    </table>
+</div>

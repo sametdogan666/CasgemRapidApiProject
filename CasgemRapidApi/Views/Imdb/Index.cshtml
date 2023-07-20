@@ -1,0 +1,25 @@
+﻿@model List<CasgemRapidApi.Models.ImdbMovieListViewModel>
+
+@{
+    Layout = null;
+}
+
+<h1>Film Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Film Adı</th>
+        <th>Film Puanı</th>
+        <th>Film Yılı</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.rank</td>
+            <td>@item.title</td>
+            <td>@item.rating</td>
+            <td>@item.year</td>
+        </tr>
+    }
+</table>
